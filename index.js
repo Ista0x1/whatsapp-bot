@@ -25,15 +25,22 @@ client.on('ready', () => {
 
 
 client.on('message', message => {
-    if (message.body === 'السلام عليكم' || message.body.includes('السلام') || message.body.includes('مرحبا') || message.body.includes('أهلا') || message.body.includes('صباح الخير')) {
+    if (message.body === 'السلام عليكم' || message.body.includes('السلام')   || message.body.includes('صباح الخير')) {
         const greetingResponse = 'وعليكم السلام ورحمة الله';
 
         
         const welcomeMessage = "شكراً لتواصلكم معنا ونتشرف بخدمتكم على مدار الساعة. \n\nلطلب استقدام جديد يرجى ارسال الرقم 1\nلمتابعة طلب سابق يرجى ارسال الرقم 2\nللاستفسارات الأخرى يرجى ارسال الرقم 3";
         client.sendMessage(message.from, greetingResponse);
         client.sendMessage(message.from, welcomeMessage);
-    } else if (message.body === '1') {
-        const countryListMessage = "إختر الدولة:\n1. أوغندا\n2. إثيوبيا\n3. الفلبين";
+        }
+        else if (message.body.includes('مرحبا') || message.body.includes('أهلا')) {
+                    const greetingResponse = 'مرحبا أهلا بك';
+                    const welcomeMessage = "شكراً لتواصلكم معنا ونتشرف بخدمتكم على مدار الساعة. \n\nلطلب استقدام جديد يرجى ارسال الرقم 1\nلمتابعة طلب سابق يرجى ارسال الرقم 2\nللاستفسارات الأخرى يرجى ارسال الرقم 3";
+                 client.sendMessage(message.from, greetingResponse);
+        client.sendMessage(message.from, welcomeMessage);   
+        }
+     else if (message.body === '1') {
+        const countryListMessage = "إختر الدولة:\n أوغندا\n إثيوبيا\n الفلبين";
         client.sendMessage(message.from, countryListMessage);
     } else if (message.body === '2') {
         client.sendMessage(message.from, 'الرجاء تزويدنا برقم الهوية و إسم صاحب العمل');
