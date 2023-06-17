@@ -8,11 +8,11 @@ const { Client, LocalAuth, MessageMedia, Location, List ,Call} = require('whatsa
 
 
 // Use the saved values
-const client = new Client({
-    authStrategy: new LocalAuth({
-         clientId: "client-one" //Un identificador(Sugiero que no lo modifiques)
-    })
-}) 
+// const client = new Client({
+//     authStrategy: new LocalAuth({
+//          clientId: "client-one" //Un identificador(Sugiero que no lo modifiques)
+//     })
+// }) 
 // Save session values to the file upon successful auth
 
 client.on('qr', (qr) => {
