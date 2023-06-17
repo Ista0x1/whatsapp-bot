@@ -5,7 +5,12 @@ const { Client, LocalAuth, MessageMedia, Location, List ,Call} = require('whatsa
 // Path where the session data will be stored
 
 // Load the session data if it has been previously saved
-
+const client = new Client({
+  puppeteer: {
+    args: ['--no-sandbox', "--disable-setuid-sandbox"]
+  },
+//  authStrategy: new LocalAuth()
+});
 
 // Use the saved values
 // const client = new Client({
